@@ -1,0 +1,25 @@
+- S
+	- Hasumi Kurea, Hatano Yui, Ichinose Ameri
+	- Kijima Airi, Kogawa Iori,
+	- Shinoda Ayumi
+- A
+	- Amakawa Sora, Asami Yuma
+	- Jinguuji Nao, Kurokawa Sumire
+	- Sakasaki Miho, Shinoda Yuu
+- B
+	- Itsukaichi Mei
+- BB
+	- Ai Sayama
+	- Yayoi Mizuki
+- C
+	- Anno Yumi
+- D
+-
+- ## New
+- S
+	- Furukawa Honoka
+- A
+	- Mashiro Mami
+	- Sano Yuma
+- B
+	- Totsuka Ruu

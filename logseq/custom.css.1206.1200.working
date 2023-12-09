@@ -1,0 +1,53 @@
+.CodeMirror{
+    line-height: 1.3em;
+    font-family: "Comic Sans Ms", Tahoma, "Courier New";
+    font-weight:600;
+    color: black;
+    /* font-size just changes the line height */
+}
+
+.CodeMirror-ines{
+    cursor: pointer;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror-gutter,
+/*.CodeMirror-gutters,*/
+/*.CodeMirror-linenumber,*/
+.CodeMirror-scroll,
+.CodeMirror-sizer {
+    font-size: 16px;
+    background-color: var(--rx-slate-06);
+}
+
+/* only affects numbered lists */
+.bullet-container{
+    color: blue;
+}
+
+/* affects inline code */
+:not(pre)>code {
+    background-color: var(--rx-slate-06);
+    border-radius: 3px;
+    color: #black;
+    font-family: "Comic Sans Ms";
+    font-weight: 600;
+    font-size: .9em;
+    font-style: normal;
+    letter-spacing: 0;
+    text-rendering: optimizeSpeed;
+}
+
+/* tags */
+a.tag {
+    background: var(--ls-tag-background,var(--lx-accent-05,transparent));
+    border-radius: 5px;
+    color: var(--ls-tag-text,var(--lx-accent-11,var(--ls-tag-text-color,#045591)));
+    cursor: pointer;
+    display: inline-block;
+    font-size: .9em;
+    opacity: var(--ls-tag-text-opacity,.8);
+    padding: 0 2px;
+    text-align: center;
+    text-decoration: none;
+}

@@ -1,0 +1,23 @@
+# Book
+template:: Book
+template-including-parent:: false
+	- ## Meta
+	  Type:: [[Books]]
+	  Status:: 
+	  Cover:: ![image](   ){:height 172, :width 98}
+	  Title:: 
+	  Author:: 
+	  Link:: [Goodreads](  )
+	  Start:: 
+	  End:: 
+	  Year::
+	- ## Content
+- Article
+  template:: article
+  template-including-parent:: false
+	- Title
+	  date:: <%today%>
+	  tags:: 
+	  link:: [Anchor](url)
+	- Content
+		- Enter your data here

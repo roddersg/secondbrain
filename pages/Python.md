@@ -1,0 +1,12 @@
+- Versions
+	- 3.11 is the base version for iPython, conda
+	- 3.12 is the latest version, but there are problems as it is so new
+- Anaconda
+	- provides a means for virtual environments besides venv
+		- conda activate - needs editing
+		-
+- ### Virtual Environments
+	- title:: Allows you to  run different python environments with each environment having its own interpreter version, packages and settings
+	- ref::
+	- tag::
+	- date:: [[Oct 29th, 2023]]

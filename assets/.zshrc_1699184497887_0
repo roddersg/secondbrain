@@ -1,0 +1,177 @@
+
+# Version
+echo "zshRD 1.04"
+
+
+# for mel etc, when ssh in
+export PATH=/home/rodney/bin:$PATH
+
+# Some options from Chris
+# some useful options (man zshoptions)
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+stty stop undef         # Disable ctrl-S to freeze terminal
+zle_highlight=('paste:none')
+
+# beeping is annoying
+unsetopt BEEP
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B
+%{$fg[red]%}[%{$fg[yellow]%}%n %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# Enable some internal functions
+autoload zmv
+
+# Defaults-------------------------------------------------------------
+# export EDITOR=subl
+# export PAGER=""
+
+
+# Aliases--------------------------------------------------------------
+# ls
+alias ls='ls --color=auto'
+alias l='ls -l'
+alias ll='ls -lahF'
+alias lls='ls -lahFtr'
+alias lc='ls -CF'
+alias l1='ls -1'
+
+# zsh
+alias zsh_reload='source $ZDOTDIR/.zshrc'
+alias zsh_edit='nano $ZDOTDIR/.zshrc'
+
+# System-wide
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+
+# General
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
+
+# grep
+alias grep='grep --color=auto'
+alias igrep='grep -i'
+alias ff='ff.sh'
+
+# my own
+# alias mf='mfind'
+# alias lossless='cd ~/idrive/newsbin/newsbin-downloads/Lossless'
+alias jf='jf.sh'
+alias nvim="/home/rodney/bin/appimage/nvim.appimage"
+alias vim=nvim
+
+# vi keybindings
+# bindkey -v
+# export KEYTIMEOUT=1
+
+
+
+jav()
+{
+  open "https://www.javlibrary.com/en/vl_searchbyid.php?list&keyword=$1" ;
+}
+
+
+# Functions ----------------------------------------------------------------
+# # extract - archive extractor
+# # usage: ex <file>
+extract ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Multi-line editing
+# bindkey -v
+# autoload -z edit-command-line
+# zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
+
+## find title/string in jav listings
+#jf()
+#{
+#    grep -i "$1" ~/Downloads/javlist.txt
+#}
+
+# find string in Music listings
+# 2nd argument is for entire catalog
+
+#mf()
+#{
+#  if [ -n "$2" ]
+#  then
+#    grep -i "$1" ~/Documents/music.txt
+#  else
+#    grep -i "$1" ~/Documents/rec_music.txt
+#  fi
+#}
+
+
+# Plugins
+
+# pick-web-browser
+#autoload -U pick-web-browser
+#alias -s html=pick-web-browser
+#zstyle ':mime:*' x-browsers chrome safari
+#zstyle ':mime:*' browser-style running x
+
+# removed
+# zsh-autocomplete
+# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+# source "$ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+
+# zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions
+source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# zsh-webopen
+# git clone https://github.com/AndrewHaluza/zsh-web-open.git ~/.oh-my-zsh/custom/plugins/web-open/
+# mv .oh-my-zsh/custom/plugins/web-open $ZDOTDIR/plugins/
+# use wo <site> [0=http/1=https]
+source "$ZDOTDIR/plugins/web-open/web-open.plugin.zsh"
+# need to tell MAC OSX how open_command works
+# alias -g open_command=open
+
+# zsh-syntax-highlighting
+# Note that zsh-syntax-highlighting must be the last plugin sourced.
+# installation
+#	Mac OS X / Homebrew: brew install zsh-syntax-highlighting
+#	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rodney/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rodney/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rodney/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rodney/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

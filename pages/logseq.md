@@ -1,0 +1,26 @@
+- [LogSeq Intro Course](https://youtube.com/playlist?list=PLNnZ7rjaL84JjFpgDxRlAOKRa9ie25gtp&si=vg5DV1VCfUsqaovm)
+- Graphs - what logseq calls databases
+- Commands
+	- '**/**' presents a list of items to add
+	- '**#**' same as '**[[ ]]**' which creates a page link with the name
+		- good practise to add a **#** (tag) to items in your blog for cross link
+- Task Manager tagging (Ctrl-Enter) after the text, click the boxes for more
+	- LATER order food from Fairprice
+	- LATER Look for spray for watering bottle
+- Flash Cards - use '**#card**' after the tag to create the flash card e.g.
+	- Best cmdline programs #card
+		- top, htop, btop - task managers
+		- fzf - fuzzy search
+		- ffmpeg - audio video encoder
+		- tldr - simplifies reading of help files
+		- neovim - great text enditor
+	- Schedules use "**/**" to enter schedules of dates
+	- Use '#inbox' to remember items as tags, then look at the unlinked references to filter for the 'inbox'
+- Navigation and moving around LogSeq
+	- Left sidebar (click on  hamburger icon)
+		- favorites for the ones that you use the most.  Use the '**...**' on top right to add to the favorites tag
+	- right sidebar opens up by clicking the top right page/sidebar icon
+	- Keeping the left and right sidebars open, you can then
+		- Shift-Click on the link, opens on the right sidebar where you can add information to the link/tag
+		- Click to open on the right
+		- You can also drag and drop blocks from left/right

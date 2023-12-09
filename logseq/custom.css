@@ -1,0 +1,21 @@
+/* import Nord Theme */
+/*
+@import url("https://cdn.jsdelivr.net/gh/bad3r/logseq-nord-theme@latest/custom.min.css");
+*/
+
+/* Works in Dark Mode */
+
+.CodeMirror{
+    line-height: 1.2em;
+    font-family: "Comic Sans Ms", Tahoma, Verdana, "Courier New", sans-serif;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror-gutter,
+/*.CodeMirror-gutters,*/
+/*.CodeMirror-linenumber,*/
+.CodeMirror-scroll,
+.CodeMirror-sizer {
+    font-size: 15px;
+    background-color: var(--rx-slate-06);
+}
